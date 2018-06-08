@@ -33,10 +33,9 @@ $(function() {
          */
            it('urls are defined', function() {
 
-             var url;
-             for (var url in allFeeds) {
-               expect(allFeeds[url]).toBeDefined();
-               expect(allFeeds[url].length).not.toBe(0);
+             for (i = 0; i < allFeeds.length; i++) {
+               expect(allFeeds[i].url).toBeDefined();
+               expect(allFeeds[i].url.length).not.toBe(0);
              }
             })
 
@@ -46,10 +45,10 @@ $(function() {
          */
 
            it('names are defined', function() {
-             var url;
-             for (var name in allFeeds) {
-               expect(allFeeds[name]).toBeDefined();
-               expect(allFeeds[name].length).not.toBe(0);
+
+             for (j = 0; j < allFeeds.length; j++) {
+               expect(allFeeds[j].name).toBeDefined();
+               expect(allFeeds[j].name.length).not.toBe(0);
              }
            })
 
@@ -121,13 +120,23 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-         beforeEach(function(done) {
-         loadFeed(0);
-         done();
-         });
+// As per reviwer notes on https://discussions.udacity.com/t/new-feed-selection-question/797040
+        beforeEach(function(done){
+          loadFeed(0, function(){
+            done();
+            firstUrl = allFeeds[0]
+
+          loadFeed(1, function(){
+            done();
+            secondUrl = allFeeds[1]
+
+          done();
+        });
+      });
+    });
 
          it('ensures when a new feed is loaded, the content changes', function(){
-            expect($('.feed').length).toEqual(1)
+            expect($('.feed')[0]).not.toEqual($('.feed')[1])
          })
         });
 
