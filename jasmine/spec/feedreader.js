@@ -82,11 +82,13 @@ $(function() {
 
         it('displays when icon is clicked', function() {
             $('.menu-icon-link').click();
+            //menu-hidden is not present so menu is visible
             expect($('body').hasClass('menu-hidden')).toBe(false)
         });
 
         it('hidden when icon is clicked again', function() {
             $('.menu-icon-link').click();
+            //menu-hidden is present so menu is hidden
             expect($('body').hasClass('menu-hidden')).toBe(true)
         });
 
@@ -124,19 +126,21 @@ $(function() {
         beforeEach(function(done) {
             //complete loading of first feed
             loadFeed(0, function() {
+              allFeeds[0].url
                 done();
+              })
                 //complete loading of second /new feed
                 loadFeed(1, function() {
+                  allFeeds[1].url
                     done();
-
+                  })
                     done();
                 });
-            });
-        });
+
 
         //first feeds entry does not equal the new feeds entry
         it('ensures when a new feed is loaded, the content changes', function() {
-            expect(allFeeds[0]).not.toEqual(allFeeds[1])
+            expect(allFeeds[0].url).not.toEqual(allFeeds[1].url)
         });
     });
 

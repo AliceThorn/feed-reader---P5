@@ -19,7 +19,9 @@ Show that .menu-hidden is true using .hasClass (to determine whether element has
 Write a test that ensures the menu changes visibility when the menu icon is clicked:
 This test checks that on click of the menu icon the menu is shown and then disabled on a second click. In app.js .menu-icon-link uses toggle class to add and remove the .menu-hidden class.
 
-Two tests will be required in this test suite. One to show that .menu-hidden is false using .hasClass so menu is hidden. and one to show that .menu-hidden is true using .hasClass so menu is visible.
+Two tests will be required in this test suite.
+One to show that .menu-hidden is false using .hasClass so menu is visible.
+One to show that .menu-hidden is true using .hasClass so menu is hidden.
 
 A new test suite called 'Initial Entries' was created.
 
