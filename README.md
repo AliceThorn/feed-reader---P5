@@ -65,6 +65,7 @@ Atom
 
 Versioning
 Git Repo
+https://github.com/AliceThorn/feed-reader---P5
 
 Authors
 Alicia Thornthwaite
@@ -78,3 +79,5 @@ https://jasmine.github.io/2.4/introduction#section-Included_Matchers
 https://devhints.io/jasmine
 Reviewer Notes on
 https://discussions.udacity.com/t/new-feed-selection-question/797040
+More understanding gained from
+https://code.tutsplus.com/tutorials/testing-your-javascript-with-jasmine--net-21229
