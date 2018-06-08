@@ -103,12 +103,13 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-         loadFeed(0);
+         loadFeed(0, function(){
          done();
-         });
+       })
+      });
 
          it('contains at least one entry in feed', function(){
-           expect($('.feed').length).toBeGreaterThan(0)
+           expect($('.entry').length).toBeGreaterThan(0)
          })
        });
 
@@ -122,21 +123,21 @@ $(function() {
 
 // As per reviwer notes on https://discussions.udacity.com/t/new-feed-selection-question/797040
         beforeEach(function(done){
+      //complete loading of first feed
           loadFeed(0, function(){
             done();
-            firstUrl = allFeeds[0]
-
+      //complete loading of second /new feed
           loadFeed(1, function(){
             done();
-            secondUrl = allFeeds[1]
 
           done();
         });
       });
     });
 
+//first feeds entry does not equal the new feeds entry
          it('ensures when a new feed is loaded, the content changes', function(){
-            expect($('.feed')[0]).not.toEqual($('.feed')[1])
+            expect(allFeeds[0]).not.toEqual(allFeeds[1])
          })
         });
 
