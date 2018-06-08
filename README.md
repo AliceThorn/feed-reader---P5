@@ -27,7 +27,7 @@ A new test suite called 'Initial Entries' was created.
 
 Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container:
 loadFeed is asynchronous so we need to use the done() function to make sure this is completed first.
-Then test that the number of entries in the .entry class is more than 0 entries using jasmine .toBeGreaterThan.
+Then test that the number of entries in the .feed .entry ($('.parent .child');)class is more than 0 entries using jasmine .toBeGreaterThan.
 
 A new test suite called 'New Feed Selection' was created.
 
